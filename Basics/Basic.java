@@ -8,7 +8,7 @@ public class Basic {
         int a = 4;
         int b = 10;
         int c = (a*b); // 40
-        double d = b/a; // 2
+        double d = b/a; // 2.0
         int e = b++; // 10, b = 11
         int f = ++a + b++; // 16, a = 5, b = 12
         int h = a%b; // 5

@@ -1,5 +1,3 @@
-package udemy.datastructures.recursion;
-
 public class Recursion {
     public static void main(String[] args) {
         int ans = factorial(5);

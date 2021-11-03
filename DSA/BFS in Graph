@@ -1,0 +1,27 @@
+// Breadth First Search : returns BFS Traversal ArrayList
+
+public static ArrayList<Integer> bfsOfGraph(int vertices, ArrayList<ArrayList<Integer>> adj) {
+    ArrayList<Integer> bfs = new ArrayList<>();
+    boolean[] visited = new boolean[vertices+1];
+
+    for(int i=1; i<=vertices; i++) {
+        if (!visited[i]) {
+            Queue<Integer> q = new LinkedList<>();
+            q.add(i);
+            visited[i] = true;
+
+            while (!q.isEmpty()) {
+                Integer node = q.poll();
+                bfs.add(node);
+
+                for(Integer it: adj.get(node)) {
+                    if (visited[it] == false) {
+                        visited[it] = true;
+                        q.add(it);
+                    }
+                }
+            }
+        }
+    }
+    return bfs;
+}

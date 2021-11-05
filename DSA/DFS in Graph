@@ -1,0 +1,23 @@
+// Depth First Search : returns DFS Traversal ArrayList
+
+    public static void DFS(int node, boolean[] visited, ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> storeDfs) {
+        storeDfs.add(node);
+        visited[node] = true;
+        for(Integer it: adj.get(node)) {
+            if (!visited[it]) {
+                DFS(it, visited, adj, storeDfs);
+            }
+        }
+    }
+
+    public static ArrayList<Integer> dfsOfGraph(int vertices, ArrayList<ArrayList<Integer>> adj) {
+        ArrayList<Integer> storeDfs = new ArrayList<>();
+        boolean[] visited = new boolean[vertices+1];
+
+        for(int i=1; i<=vertices; i++) {
+            if (!visited[i]) {
+                DFS(i, visited, adj, storeDfs);
+            }
+        }
+        return storeDfs;
+    }
